@@ -9,12 +9,11 @@ include_once('../partials/conexion.php');
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         $nombre = $_POST['n'];
-        $correo = $_POST['c'];
-        $usuario = $_POST['u'];
-        $pass = $_POST['p'];
+        $prioridad = $_POST['c'];
+        $contexto = $_POST['u'];
         
-        $INS = "INSERT INTO usuario (Nombre,Correo,Usuario,Password)
-                            VALUES ('$nombre', '$correo', '$usuario', '$pass')";
+        $INS = "INSERT INTO tareas (Nombre,prioridad,contexto)
+                            VALUES ('$nombre', '$prioridad', '$contexto')";
                             
         $query = mysqli_query($link, $INS);
         
