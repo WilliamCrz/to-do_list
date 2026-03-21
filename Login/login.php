@@ -22,7 +22,7 @@ if (isset($_POST["entrar"])) {
             if ($password == $datos->Password) {
                 $_SESSION['$usuario'] = $datos->usuario;
 
-                header("Location: ../partials/formulario_crear.php");
+                header("Location: ../partials/index.php");
                 exit();
 
             } else {

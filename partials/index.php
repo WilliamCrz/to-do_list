@@ -86,7 +86,10 @@
             <div class="col-md-6 col-lg-5">
                 <div class="tarjeta-custom p-4">
                     <h4 class="mb-4 text-center">Nueva Tarea</h4>
-                    <form action="crear.php" method="POST">
+                    
+                    <!-- Aqui esta el formulario -->
+                    
+                    <form action="../crud/CRT.php" method="POST">
                         <div class="mb-3">
                             <label class="form-label text-muted small">Título</label>
                             <input type="text" name="titulo" class="form-control" required>
@@ -106,6 +109,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Guardar Tarea</button>
                     </form>
+                     <!-- Aqui esta el formulario -->
                 </div>
             </div>
         </div>
