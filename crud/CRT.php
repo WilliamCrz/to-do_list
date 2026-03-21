@@ -8,18 +8,19 @@ include_once('../partials/conexion.php');
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        $nombre = $_POST['n'];
-        $correo = $_POST['c'];
-        $usuario = $_POST['u'];
-        $pass = $_POST['p'];
+        $titulo = $_POST['n'];
+        $prioridad = $_POST['c'];
+        $contexto = $_POST['u'];
         
-        $INS = "INSERT INTO usuario (Nombre,Correo,Usuario,Password)
-                            VALUES ('$nombre', '$correo', '$usuario', '$pass')";
+        // INSERT INTO tareas (id, Nombre, Contexto, prioridad) VALUES (7, 'Juan', 'a', 'a');
+        
+        $INS = "INSERT INTO tareas (Nombre,prioridad,contexto)
+                            VALUES ('$nombre', '$prioridad', '$contexto')";
                             
         $query = mysqli_query($link, $INS);
         
         
-        Header("Location: ../partials/tabla_de_datos.php");
+        Header("Location: ../partials/index.php");
     }
     
 ?>
