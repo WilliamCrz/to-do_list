@@ -1,0 +1,45 @@
+body {
+  background: linear-gradient(135deg, #eef2f7, #f8f9fa);
+}
+
+.tarjeta-custom {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* prioridades con más vida */
+.prioridad-alta {
+  border-left: 6px solid #dc3545;
+}
+
+.prioridad-media {
+  border-left: 6px solid #ffc107;
+}
+
+.prioridad-baja {
+  border-left: 6px solid #198754;
+}
+
+/* botones */
+.btn-light {
+  background: #f1f3f5;
+  border: none;
+}
+
+.btn-light:hover {
+  background: #e2e6ea;
+}
+
+/* checkbox más visible */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
