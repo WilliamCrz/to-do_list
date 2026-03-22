@@ -2,20 +2,17 @@
 include_once('../partials/configuracion.php');
 include_once('../partials/conexion.php');
 
-
-    $ID = $_POST['id'];
-    $nombre = $_POST['n'];
-    $correo = $_POST['c'];
-    $usuario = $_POST['u'];
-    $pass = $_POST['p'];
+    $id = $_GET['id'];
+    $titulo = $_POST['titulo'];
+    $prioridad = $_POST['prioridad'];
+    $contexto = $_POST['descripcion'];
     
-    $UDP = "UPDATE usuario SET Nombre = '$nombre', Correo= '$correo', Usuario= '$usuario', 
-                                    Password= '$pass' WHERE id= '$ID' ";
+    $UDP = "UPDATE tareas SET Titulo = '$titulo', Contexto= '$contexto' WHERE id= '$ID' ";
                           
     $query = mysqli_query($link, $UDP);
     
     if ($query)
     {
-        Header("Location: ../partials/tabla_de_datos.php");
+        Header("Location: ../partials/index/.php");
     }
 ?>
