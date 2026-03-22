@@ -1,4 +1,13 @@
-<?php include("navbar.php"); ?>
+<?php 
+    
+    include("navbar.php"); 
+    $id = $_GET['id'];
+    
+    $SLT = "SELECT * FROM tareas WHERE id = '$id' ";
+    $query = mysqli_query($link, $SLT);
+    $row = mysqli_fetch_array($query);
+
+?>
 
 <div class="container">
 <div class="row justify-content-center">
@@ -8,9 +17,12 @@
 
 <h4 class="mb-4">Editar Tarea</h4>
 
-<form method="POST">
-    <input type="text" name="titulo" class="form-control mb-3" value="Ejemplo" required>
-    <textarea name="descripcion" class="form-control mb-3" required>Detalle</textarea>
+<form action="../crud/UDT.php" method="POST">
+    
+    <!-- Input secreto de id !--> 
+    <input type="hidden" name="id" value="<?= $row['id'] ?>">
+    <input type="text" name="titulo" class="form-control mb-3" value="<?= $row['Titulo'] ?>" required>
+    <textarea name="descripcion" class="form-control mb-3" required><?= $row['Contexto'] ?></textarea>
 
     <select name="prioridad" class="form-select mb-3">
         <option value="1">Alta</option>

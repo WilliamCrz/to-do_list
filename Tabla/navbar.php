@@ -1,3 +1,9 @@
+<?php
+include_once('../partials/configuracion.php');
+include_once('../partials/conexion.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,9 +11,50 @@
   <title>Inicio - Gestor de tareas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
   <style>
-    body { background-color: #f8f9fa; color: #333; }
-    .tarjeta-custom { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #eee; margin-top: 2rem;}
+      body {
+      background: linear-gradient(135deg, #eef2f7, #f8f9fa);
+    }
+
+    .tarjeta-custom {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tarjeta-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .prioridad-alta {
+      border-left: 6px solid #dc3545;
+    }
+
+    .prioridad-media {
+      border-left: 6px solid #ffc107;
+    }
+
+    .prioridad-baja {
+      border-left: 6px solid #198754;
+    }
+
+    .btn-light {
+      background: #f1f3f5;
+      border: none;
+    }
+
+    .btn-light:hover {
+      background: #e2e6ea;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>

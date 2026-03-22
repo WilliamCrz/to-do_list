@@ -7,7 +7,7 @@
 <div class="tarjeta-custom p-4">
 <h4 class="mb-4 text-center">Nueva Tarea</h4>
 
-<form method="POST">
+<form action="../crud/CRT.php" method="POST">
     <input type="text" name="titulo" class="form-control mb-3" placeholder="Título" required>
     <textarea name="descripcion" class="form-control mb-3" placeholder="Descripción" required></textarea>
 

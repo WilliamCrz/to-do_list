@@ -20,7 +20,7 @@ include_once('../partials/conexion.php');
         $query = mysqli_query($link, $INS);
         
         
-        Header("Location: ../partials/index.php");
+        Header("Location: ../Tabla/index.php");
     }
     
 ?>
