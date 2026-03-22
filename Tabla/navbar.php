@@ -14,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-5">
   <div class="container">
-    <a class="navbar-brand" href="../index.php">To Do List</a>
+    <a class="navbar-brand" href="../Tabla/index.php">To Do List</a>
 
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
