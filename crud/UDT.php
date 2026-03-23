@@ -9,13 +9,18 @@ include_once('../partials/conexion.php');
         $titulo = $_POST['titulo'];
         $prioridad = $_POST['prioridad'];
         $contexto = $_POST['descripcion'];
+        $fecha = $_POST['fecha'];
         
-        $UDP = "UPDATE tareas SET Titulo = '$titulo', Contexto = '$contexto', Prioridad = '$prioridad' WHERE id= '$id' ";
+        $UDP = "UPDATE tareas SET titulo = '$titulo', contexto = '$contexto', prioridad = '$prioridad', fecha = '$fecha' WHERE id= '$id' ";
         
         $query = mysqli_query($link, $UDP);
         
-    
-        Header("Location: ../Tabla/mi_tareas.php");
-                
-     }
+       if($query){
+       
+        header("Location: ../Tabla/mi_tareas.php");
+        exit;
+    } else {
+        echo "Error al actualizar la tarea: " . mysqli_error($link);
+    }
+}
 ?>

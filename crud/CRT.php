@@ -11,16 +11,20 @@ include_once('../partials/conexion.php');
         $titulo = $_POST['titulo'];
         $prioridad = $_POST['prioridad'];
         $contexto = $_POST['descripcion'];
-        
-        
-        
-        $INS = "INSERT INTO tareas (Titulo,Prioridad,Contexto)
-                            VALUES ('$titulo', '$prioridad', '$contexto')";
+        $fecha = $_POST['fecha'];
+
+        $INS = "INSERT INTO tareas (titulo, prioridad, contexto, fecha)
+                            VALUES ('$titulo', '$prioridad', '$contexto', '$fecha')";
                             
         $query = mysqli_query($link, $INS);
         
+      if($query){
         
-        Header("Location: ../Tabla/index.php");
+        header("Location: ../Tabla/index.php");
+        exit;
+    } else {
+        echo "Error al guardar la tarea: " . mysqli_error($link);
     }
-    
+}
+
 ?>

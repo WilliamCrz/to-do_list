@@ -9,6 +9,7 @@
 
 <form action="../crud/CRT.php" method="POST">
     <input type="text" name="titulo" class="form-control mb-3" placeholder="Título" required>
+    <input type="date" name="fecha" class="form-control" required>
     <textarea name="descripcion" class="form-control mb-3" placeholder="Descripción" required></textarea>
 
     <select name="prioridad" class="form-select mb-3" required>

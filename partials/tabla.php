@@ -41,6 +41,7 @@ $SQL = mysqli_query($link, $SLT);
             <th><?=  $row['titulo'] ?></th>
             <th><?=  $row['contexto'] ?></th>
             <th><?=  $row['prioridad'] ?></th>
+            <th><?=  $row['fecha'] ?></th>
         
             <th><a href="../partials/formulario_editar.php?id=<?= $row['id'] ?>">Editar</a></th>
             <th><a href="../crud/DLT.php?id=<?php echo $row['id'] ?>">Eliminar</a></th>

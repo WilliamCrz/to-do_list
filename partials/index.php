@@ -7,6 +7,7 @@
   <title>To Do List Grupo 3</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <style>
     body { background-color: #f8f9fa; color: #333; }
     .tarjeta-custom { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #eee; margin-top: 2rem;}
@@ -65,7 +66,6 @@
         
        
         
-    
          <?php while($row = mysqli_fetch_array($query)): ?>                                 
         <div class="row g-3">
          
@@ -108,25 +108,33 @@
                     <!-- Aqui esta el formulario -->
                     
                     <form action="../crud/CRT.php" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label text-muted small" >Título nueva tarea</label>
-                            <input type="text" name="titulo" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label text-muted small">Descripción</label>
-                            <textarea name="descripcion" class="form-control" rows="3" required></textarea>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label text-muted small">Prioridad</label>
-                            <select name="prioridad" class="form-select" required>
-                                <option value="" disabled selected>Selecciona...</option>
-                                <option value="1">Alta</option>
-                                <option value="2">Media</option>
-                                <option value="3">Baja</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Guardar Tarea</button>
-                    </form>
+    <div class="mb-3">
+        <label class="form-label text-muted small">Título nueva tarea</label>
+        <input type="text" name="titulo" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label text-muted small">Fecha de la tarea</label>
+        <input type="date" name="fecha" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label text-muted small">Descripción</label>
+        <textarea name="descripcion" class="form-control" rows="3" required></textarea>
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label text-muted small">Prioridad</label>
+        <select name="prioridad" class="form-select" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="1">Alta</option>
+            <option value="2">Media</option>
+            <option value="3">Baja</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Guardar Tarea</button>
+</form>
                      <!-- Aqui esta el formulario -->
                 </div>
             </div>
@@ -147,6 +155,7 @@
                         <div class="mb-3">
                             <label class="form-label text-muted small">Titulo</label>
                             <input type="text" name="titulo" class="form-control" value="" required>
+                            <input type="date" name="fecha" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label text-muted small">Descripción</label>
