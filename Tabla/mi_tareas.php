@@ -11,7 +11,7 @@
 
 <div class="row justify-content-center mb-4 mt-4">
     <div class="col-md-6">
-        <form method="GET">
+      <form method="GET" action="mi_tareas.php">
             <div class="input-group">
                 <input type="search" name="q" class="form-control" placeholder="Buscar tarea...">
                 <button class="btn btn-outline-secondary">
@@ -24,12 +24,24 @@
 
 <div class="row g-3">
 
+<?php if(isset($_GET['q'])): ?>
+    <?php if(mysqli_num_rows($query) > 0): ?>
+        <div class="alert alert-success text-center">
+            Se encontraron <?= mysqli_num_rows($query) ?> tarea(s)
+        </div>
+    <?php else: ?>
+        <div class="alert alert-danger text-center">
+            No se encontraron tareas
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+
 <?php while($row = mysqli_fetch_array($query)): ?>
 
 <?php 
-    $clasePrioridad = 
-        $row['Prioridad'] == 1 ? 'prioridad-alta' : 
-        ($row['Prioridad'] == 2 ? 'prioridad-media' : 'prioridad-baja');
+    $clasePrioridad =
+    $row['prioridad'] == 'alta' ? 'prioridad-alta' :
+    ($row['prioridad'] == 'media' ? 'prioridad-media' : 'prioridad-baja');
 ?>
 
 <div class="col-md-6 col-lg-4">

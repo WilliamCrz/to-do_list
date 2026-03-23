@@ -9,14 +9,14 @@ $eventos_js = [];
 while($row = $result->fetch_assoc()){
   
     if(strtolower($row['estado']) == 'completada'){
-        $color = "#90ee90"; 
-    } elseif($row['fecha'] < $hoy){
-        $color = "#f7adad"; 
+        $color = "#90ee90"; // verde claro
+    } elseif($row['fecha'] < $hoy && strtolower($row['estado']) != 'completada'){
+        $color = "#f7adad"; // rojo claro
     } else {
         switch(strtolower($row['prioridad'])){
-            case 'alta': $color = "red"; break;
-            case 'media': $color = "blue"; break;
-            case 'baja': $color = "green"; break;
+            case 'alta': $color = "#dc3545"; break;
+            case 'media': $color = "#0d6efd"; break;
+            case 'baja': $color = "#198754"; break;
             default: $color = "gray"; 
         }
     }
