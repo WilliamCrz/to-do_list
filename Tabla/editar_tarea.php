@@ -21,9 +21,9 @@
     
     <!-- Input secreto de id !--> 
     <input type="hidden" name="id" value="<?= $row['id'] ?>">
-    <input type="text" name="titulo" class="form-control mb-3" value="<?= $row['Titulo'] ?>" required>
+    <input type="text" name="titulo" class="form-control mb-3" value="<?= $row['titulo'] ?>" required>
     <input type="date" name="fecha" class="form-control" required>
-    <textarea name="descripcion" class="form-control mb-3" required><?= $row['Contexto'] ?></textarea>
+    <textarea name="contexto" class="form-control mb-3" required><?= $row['contexto'] ?></textarea>
 
     <select name="prioridad" class="form-select mb-3">
         <option value="1">Alta</option>

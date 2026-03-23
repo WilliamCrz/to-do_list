@@ -49,8 +49,8 @@
     <div class="tarjeta-custom p-3 h-100 d-flex flex-column <?= $clasePrioridad ?>">
         
         <div class="flex-grow-1">
-            <h5 class="fw-bold text-dark"><?= $row['Titulo'] ?></h5>
-            <p class="small text-muted mb-3"><?= $row['Contexto'] ?></p>
+            <h5 class="fw-bold text-dark"><?= $row['titulo'] ?></h5>
+            <p class="small text-muted mb-3"><?= $row['contexto'] ?></p>
         </div>
 
         <div class="d-flex justify-content-between align-items-center border-top pt-2 mt-2">
@@ -58,7 +58,7 @@
             <input type="checkbox">
 
             <div class="btn-group">
-                <?= $row['Fecha'] ?>
+                <?= $row['fecha'] ?>
                 <a href="../Tabla/editar_tarea.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-light text-primary">
                     <i class="bi bi-pencil"></i>
                 </a>

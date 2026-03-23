@@ -10,7 +10,7 @@ include_once('../partials/conexion.php');
     {
         $titulo = $_POST['titulo'];
         $prioridad = $_POST['prioridad'];
-        $contexto = $_POST['descripcion'];
+        $contexto = $_POST['contexto'];
         $fecha = $_POST['fecha'];
 
         $INS = "INSERT INTO tareas (titulo, prioridad, contexto, fecha)

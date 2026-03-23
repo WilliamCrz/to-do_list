@@ -8,7 +8,7 @@ include_once('../partials/conexion.php');
         $id = $_POST['id'];
         $titulo = $_POST['titulo'];
         $prioridad = $_POST['prioridad'];
-        $contexto = $_POST['descripcion'];
+        $contexto = $_POST['contexto'];
         $fecha = $_POST['fecha'];
         
         $UDP = "UPDATE tareas SET titulo = '$titulo', contexto = '$contexto', prioridad = '$prioridad', fecha = '$fecha' WHERE id= '$id' ";
