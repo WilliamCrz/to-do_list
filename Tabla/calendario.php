@@ -9,9 +9,9 @@ $eventos_js = [];
 while($row = $result->fetch_assoc()){
   
     if(strtolower($row['estado']) == 'completada'){
-        $color = "green"; 
+        $color = "#90ee90"; 
     } elseif($row['fecha'] < $hoy){
-        $color = "red"; 
+        $color = "#f7adad"; 
     } else {
         switch(strtolower($row['prioridad'])){
             case 'alta': $color = "red"; break;
@@ -21,15 +21,22 @@ while($row = $result->fetch_assoc()){
         }
     }
 
-    $eventos_js[] = [
-        'id' => $row['id'],
-        'title' => $row['titulo'],
-        'start' => $row['fecha'],
-        'color' => $color,
-        'contexto' => $row['contexto']
-    ];
+   $eventos_js[] = [
+    'id' => $row['id'],
+    'title' => $row['titulo'],
+    'start' => $row['fecha'],
+    'color' => $color,
+    'extendedProps' => [
+        'contexto' => $row['contexto'],
+        'prioridad' => $row['prioridad'],
+        'estado' => $row['estado']
+    ]
+];
+
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

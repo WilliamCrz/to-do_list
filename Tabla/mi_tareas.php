@@ -3,7 +3,11 @@
     include("navbar.php"); 
  ?>
 
+
 <div class="container">
+
+<a href="exportar_tareas.php" class="btn btn-success mb-3" style="background-color:#5dade2; color:white;">
+    <i class="bi bi-download"></i> Exportar tareas </a>
 
 <div class="row justify-content-center mb-4 mt-4">
     <div class="col-md-6">
